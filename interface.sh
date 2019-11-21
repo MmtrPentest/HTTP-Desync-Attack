@@ -226,6 +226,5 @@ echo -ne "[+] Enter Method       : "
 read method
 echo -ne "[+] Enter Request Type : "
 read request
-
-python ce_te_desync_scanner.py $victim $method / 
- fi
+python ce_te_desync_scanner.py $victim "$method $request" 
+fi
