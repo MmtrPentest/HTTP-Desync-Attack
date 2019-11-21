@@ -217,12 +217,15 @@ then
 ./specialrequest3
  fi
 
-if [ $Option -eq "24" ]
+if [ $Option -eq "25" ]
 then
-./ce_te_desync_scanner.py
-echo "[+] Enter Victim: "
+python ce_te_desync_scanner.py
+echo "[+] Enter Victim       : "
 read victim
-echo "[+] Enter Method: "
+echo "[+] Enter Method       : "
 read method
-./ce_te_desync_scanner.py $victim $method / 
+echo "[+] Enter Request Type : "
+read request
+
+python ce_te_desync_scanner.py $victim $method / 
  fi
