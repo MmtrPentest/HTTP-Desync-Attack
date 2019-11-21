@@ -220,11 +220,11 @@ then
 if [ $Option -eq "25" ]
 then
 python ce_te_desync_scanner.py
-echo "[+] Enter Victim       : "
+echo -ne "[+] Enter Victim       : "
 read victim
-echo "[+] Enter Method       : "
+echo -ne "[+] Enter Method       : "
 read method
-echo "[+] Enter Request Type : "
+echo -ne "[+] Enter Request Type : "
 read request
 
 python ce_te_desync_scanner.py $victim $method / 
