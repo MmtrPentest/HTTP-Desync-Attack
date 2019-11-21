@@ -4,5 +4,5 @@ Automated HTTP Desync Attack Kit
 
 # Interface
 <div align="center">
-    <img src="https://i.ibb.co/0KvXd9p/httpdesync.png" width="600px"</img> 
+    <img src="https://i.ibb.co/XCX4rxW/desync.png" width="600px"</img> 
 </div>
