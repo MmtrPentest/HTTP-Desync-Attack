@@ -83,6 +83,7 @@ echo -e "$red [$green+$red] 21:$off Bypass Admin Desync Attack "
 echo -e "$red [$green+$red] 22:$off Bypass Admin Desync Attack             - Version2 "
 echo -e "$red [$green+$red] 23:$off Special Request Desync Attack "
 echo -e "$red [$green+$red] 24:$off Special Request Desync Attack          - Version2 "
+echo -e "$red [$green+$red] 25:$off CE and TE Scanner                      - Python Code"
 
 echo "";
 echo -ne "$red [$green+$red] $BCyan Enter Selection: $BCyan $off"; 
@@ -96,7 +97,7 @@ if [ $Option -eq "1" ]
   
 if [ $Option -eq "2" ]
 then
- ./detect_desync2
+ ./detect_desync_socket
  fi
 
 if [ $Option -eq "3" ]
@@ -214,4 +215,14 @@ then
 if [ $Option -eq "24" ]
 then
 ./specialrequest3
+ fi
+
+if [ $Option -eq "24" ]
+then
+./ce_te_desync_scanner.py
+echo "[+] Enter Victim: "
+read victim
+echo "[+] Enter Method: "
+read method
+./ce_te_desync_scanner.py $victim $method / 
  fi
